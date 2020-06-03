@@ -7,9 +7,14 @@ Welcome to MCCCS-X's documentation!
 ===================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+   :numbered:
    :caption: Contents:
 
+   install.rst
+   input_files.rst
+   algorithms.rst
+   zreferences.rst
 
 
 Indices and tables

@@ -33,3 +33,9 @@
 
 # Python
 venv/
+
+# Pycharm
+.idea/
+
+# Sphinx documentation
+docs/build/
