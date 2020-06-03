@@ -5,6 +5,8 @@ This code is currently under active development,
 but **is not ready for production use**.
 
 [Documentation](https://mcccs-x.github.io/docs-web/)
+===============
+https://mcccs-x.github.io/docs-web
 
 History
 =======
