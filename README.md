@@ -10,12 +10,12 @@ but **is not ready for production use**.
 
 History
 =======
-MCCCS-MN source code was taken from https://github.com/SiepmannGroup/desorption on 6/3/2020.
-CMakeLists.txt was taken from https://github.com/SiepmannGroup/VLE-Validation on 6/3/2020.
+* MCCCS-MN source code was taken from https://github.com/SiepmannGroup/desorption on 6/3/2020.
+* CMakeLists.txt was taken from https://github.com/SiepmannGroup/VLE-Validation on 6/3/2020.
 
 Contributing
 ============
-We are actively looking for contributors!
+We are actively looking for contributors! A good way to get started is to check out the [Issues](https://github.com/MCCCS-X/MCCCS-X/issues), especially the ones labelled **Good First Issue**.
 
 Road Map
 ========
