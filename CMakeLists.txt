@@ -350,7 +350,7 @@ endif()
 set_directory_properties(PROPERTIES INCLUDE_DIRECTORIES "${Fortran_INCLUDE_DIRS};${PROJECT_BINARY_DIR}")
 
 add_subdirectory(src)
-add_subdirectory(contrib/baip/Fortran)
+# add_subdirectory(contrib/baip/Fortran)
 
 get_directory_property(PREPROCESSOR_DEFINITIONS COMPILE_DEFINITIONS)
 get_target_property(SAVE_Fortran_FLAGS topmon INCLUDE_DIRECTORIES)
