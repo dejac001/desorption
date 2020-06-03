@@ -54,3 +54,41 @@ To run with multiple processors (e.g. 2), the last line is be replaced with
 
 .. seealso::
     https://www.msi.umn.edu/sites/default/files/Singularity_Containers.pdf
+
+Windows 10
+----------
+On Windows 10, installing and running can be performed using
+Docker or Ubuntu.
+The instructions for Docker are given above.
+Otherwise, install Windows-Subsystem-for-Linux_
+
+.. _Windows-Subsystem-for-Linux: https://docs.microsoft.com/en-us/windows/wsl/install-win10
+
+then install Ubuntu from the App store
+and then follow the instructions below for Ubuntu.
+
+Ubuntu
+------
+
+The dockerfiles and docker image is made in ubuntu,
+so the same commands can be made as those in the docker files.
+
+First, the dependencies need to be installed.
+The associated dockerfile looks like the following
+
+.. literalinclude:: ../../Dockerfiles/base
+    :language: bash
+    :linenos:
+
+To install the ubuntu dependencies,
+type in the commands **after** :code:`RUN`.
+
+Second, the code needs to be cloned from the
+repository. The associated dockerfile looks like
+
+.. literalinclude:: ../../Dockerfiles/users
+    :language: bash
+    :linenos:
+
+Again, installation in ubuntu requires using the same
+commands **after** :code:`RUN`.
