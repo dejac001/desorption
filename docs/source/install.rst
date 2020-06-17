@@ -92,3 +92,21 @@ repository. The associated dockerfile looks like
 
 Again, installation in ubuntu requires using the same
 commands **after** :code:`RUN`.
+
+Minnesota Supercomputing Institute
+----------------------------------
+
+Mesabi
+******
+
+.. codeblock:: bash
+
+    module load cmake
+    cd /path/to/MCCCS-X
+    mkdir build && cd build/
+    cmake ..
+
+
+.. note::
+    This uses the *GNU* 4.8.5 fortran compiler.
+    You can try using other compilers too.
