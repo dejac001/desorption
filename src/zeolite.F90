@@ -382,8 +382,16 @@ contains
           is_ztb_complete=.false.
           if (lprint) write(io_output,*) 'read in tabulated potential:'
           read(io_ztb,end=100) zunittmp,zangtmp,ngridtmp,zntypetmp,lewaldtmp,ltailczeotmp,lshifttmp,rcuttmp
-          if (ANY(abs(zunittmp-zunit%boxl).gt.eps).or.ANY(ngridtmp.ne.zunit%ngrid).or.(zntypetmp.ne.ztype%ntype))&
-           call err_exit(__FILE__,__LINE__,'problem 1 in zeolite potential table',myid+1)
+          if (ANY(abs(zunittmp-zunit%boxl).gt.eps)) then
+             call err_exit(__FILE__,__LINE__,'zunittmp not same as zunit%boxl',myid+1)
+          end if
+          if (ANY(ngridtmp.ne.zunit%ngrid)) then
+             call err_exit(__FILE__,__LINE__,'ngridtmp not same as zunit%ngrid',myid+1)
+          end if
+          if (zntypetmp.ne.ztype%ntype) then
+             call err_exit(__FILE__,__LINE__,'zntypetmp not same as ztype%ntype',myid+1)
+          end if
+        
           do i=1,ztype%ntype
              read(io_ztb,end=100) atom
              if (trim(ztype%name(i))/=trim(atom)) then
