@@ -1,0 +1,121 @@
+&mc_shared
+     seed =     1
+     nbox =           2
+     nmolty =           1
+     nchain =         500
+     nstep = 2
+     lstop = F
+     iratio = 500
+     rmin = 1.00
+     softcut = 100.000000000000
+     linit = F
+     lreadq = F
+ /
+
+
+ &mc_volume
+     tavol =  0.500000000000000
+     iratv = 500
+     pmvlmt =   0.0d0 1.0d0
+     pmvol = -1.0
+     rmvolume =   1000
+ /
+
+
+ &mc_swap
+     pmswap = -1.0
+     pmswmt = 1.0d0
+ /
+
+
+ &mc_cbmc
+     rcutin=   5.00000000000000
+     pmcb = -1.0
+     pmcbmt = 0.0d0
+     pmall = 0.0d0
+     nchoi1 =          32
+     nchoi =          16
+     nchoir =          16
+     nchoih =           1
+     nchtor =         100
+     nchbna =        1000
+     nchbnb =        1000
+     icbdir =           0
+     icbsta =           0
+     rbsmax =   3.50000000000000
+     rbsmin =   2.50000000000000
+     avbmc_version =    0
+     pmbias = 0.0d0
+     pmbsmt = 0.0d0
+     pmbias2 = 0.0d0
+     pmfix = 0.0d0
+     lrig = F
+     lpresim = F
+     iupdatefix =  100000000
+ /
+
+
+ &mc_simple
+     armtra =  1.000000000000000E-002
+     rmtra =  0.300000000000000
+     rmrot =  0.400000000000000
+     tatra =  0.500000000000000
+     tarot =  0.500000000000000
+     pmtra = 0.75
+     pmtrmt = 1.0d0
+     pmromt = 1.0d0
+ /
+
+
+SIMULATION_BOX
+! zeolite --'must always be first box'
+! boxlx   boxly   boxlz   rcut  kalp   rcutnn numDimensionIsIstropic lsolid lrect lideal ltwice temperature pressure(MPa)
+40.044 38.798 40.149 14.0d0 3.5 0.000 0 F F F F 298.00 0.001
+! nchain_1 ... nchain_nmolty ghost_particles
+0 0
+! inix iniy iniz inirot inimix zshift dshift use_linkcell rintramax
+    0   0    0    0       0    0.0d0  0.0d0     F         0.0
+
+! vapor box
+! boxlx boxly   boxlz   rcut  kalp   rcutnn numDimensionIsIstropic lsolid lrect lideal ltwice temperature pressure(MPa)
+125.000 125.000 125.000 30.0d0 3.5 0.000 0 F F F F 298.00 0.001
+! nchain_1 ... nchain_nmolty ghost_particles
+500 0
+! inix iniy iniz inirot inimix zshift dshift use_linkcell rintramax
+ 8   8    8    0       0    0.0d0  5.0d0     F         0.0
+
+END SIMULATION_BOX
+
+MOLECULE_TYPE
+! nunit nugrow ncarbon maxcbmc maxgrow iring lelect lring lrigid lbranch lsetup lq14scale qscale iurot isolute
+    1     1       1       1       1      1      F     F      F     F        F      F 0.5 0 1000000
+! unit ntype leaderq
+1 1 1
+! stretching
+0
+! bending
+0
+! torsion
+0
+END MOLECULE_TYPE
+
+
+MC_SWAP
+! nswapb pmswapb
+1 1.0d0
+! box1 box2
+1 2
+END MC_SWAP
+
+
+SAFE_CBMC
+END SAFE_CBMC
+
+MC_SWATCH
+END MC_SWATCH
+
+SPECIFIC_ATOM_TRANSL
+! How many atoms should we be performing translations on?
+! What is the index of those atoms in their respective molecules?
+! What is the molecule type for each atom?
+END SPECIFIC_ATOM_TRANSL
