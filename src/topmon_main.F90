@@ -1782,14 +1782,14 @@ contains
        call mp_bcast(express(i),1,rootid,groupid)
 
        if (lprint) then
-          write(io_output,'(A,I0,A,2(F8.3," x "),F8.3)') 'Box ',i,': ',boxlx(i),boxly(i),boxlz(i)
-          write(io_output,'(2(A,F6.3))') '   rcut: ',rcut(i),' [Ang], kalp: ',kalp(i)
+          write(io_output,'(A,I0,A,2(E12.5,"  x "),E12.5)') 'Box ',i,': ',boxlx(i),boxly(i),boxlz(i)
+          write(io_output,'(2(A,E12.5))') '   rcut: ',rcut(i),' [Ang], kalp: ',kalp(i)
           write(io_output,'(A,F6.3)') '   neighbor list cutoff (rcutnn): ',rcutnn(i)
           write(io_output,'(A,I0)') '   number of dimensions that are isotropic: ',numberDimensionIsIsotropic(i)
           write(io_output,'(4(A,L2))') '   lsolid: ',lsolid(i),', lrect: ',lrect(i),', lideal: ',lideal(i),', ltwice: '&
            ,ltwice(i)
           write(io_output,'(A,F8.3,A)') '   temperature: ',rtmp,' [K]'
-          write(io_output,'(A,G16.9,A)') '   external pressure: ',express(i),' [MPa]'
+          write(io_output,'(A,E12.5,A)') '   external pressure: ',express(i),' [MPa]'
        end if
 
        if (myid.eq.rootid) then
