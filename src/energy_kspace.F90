@@ -442,8 +442,8 @@ contains
 !> Bai Xue 2016: Enable efficient calculation of cos and sin if lrecip=.true. 
   subroutine recip(ibox,vrecipnew,vrecipold,type)
     integer::ic,izz,ii,imolty,ibox,ncount,ncount1,type,count1,count2
-    integer::l,m,n,i,nm,nn
-    real::vrecipnew,vrecipold,sumr(2),sumi(2),arg,kx1,ky1,kz1,m_pre,n_pre,bx1,by1,bz1,hmatik(9)
+    integer::l,m,n,i,nm,nn,n_pre,m_pre
+    real::vrecipnew,vrecipold,sumr(2),sumi(2),arg,kx1,ky1,kz1,bx1,by1,bz1,hmatik(9)
     real::A(vectormax1,vectormax1,vectormax1),B(vectormax1,vectormax1,vectormax1),sumr1(vectormax,2),sumi1(vectormax,2)
 
     ! RP added for MPI
