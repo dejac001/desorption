@@ -1934,7 +1934,7 @@ contains
                    write(io_output,'(A,I0)') '   maximum number of units for CBMC: ', nmaxcbmc(imol)
                    write(io_output,'(A,I0)') '   maximum number of interior segments for SAFE-CBMC regrowth: ',maxgrow(imol)
                    write(io_output,'(A,I0)') '   number of atoms in a ring (if lring=.true.): ',iring(imol)
-                   write(io_output,'(2(A,I0),6(A,L2),A,F3.1)') '   iurot: ',iurot(imol),', isolute: ',isolute(imol),', lelect: '&
+                   write(io_output,'(2(A,I0),6(A,L2),A,F4.1)') '   iurot: ',iurot(imol),', isolute: ',isolute(imol),', lelect: '&
                     ,lelect(imol),', lring: ',lring(imol),', lrigid: ',lrigid(imol),', lbranch: ',lbranch(imol)&
                     ,', lsetup: ',lsetup,', lq14scale: ',lq14scale(imol),', qscale: ',qscale(imol)
                 end if
@@ -2116,7 +2116,7 @@ contains
                    if (lprint) then
                       write(io_output,'(I0,A)') nrotbd(imol),' rotation centers:'
                       do ii=1,nrotbd(imol)
-                         write(io_output,'(A,I0,A,F5.3)') '   around bead: ',irotbd(ii,imol),', probability: ',pmrotbd(ii,imol)
+                         write(io_output,'(A,I0,A,F6.3)') '   around bead: ',irotbd(ii,imol),', probability: ',pmrotbd(ii,imol)
                       end do
                    end if
                 end if
@@ -2776,7 +2776,7 @@ contains
 
     if (lprint) then
        write(io_output,'(/,A,/,A)') 'NAMELIST MC_FLUCQ','------------------------------------------'
-       write(io_output,'(A,F4.2)') 'target fluctuating charge acceptance ratio (taflcq): ',taflcq
+       write(io_output,'(A,F5.2)') 'target fluctuating charge acceptance ratio (taflcq): ',taflcq
        write(io_output,'(A,F8.3,A)') 'fluctuating charge temperature: ',fqtemp,' [K]'
        write(io_output,'(A,G16.9)') 'initial maximum displacement for fluctuating charge moves: ',rmflucq
        write(io_output,'(A,G16.9)') 'pmflcq: ',pmflcq
@@ -4335,7 +4335,7 @@ contains
        write(io_unit,'("! nchain_1 ... nchain_nmolty ghost_particles",/,'//format_n(nmolty,'(I0,1X)')//',I0)')&
         (ininch(j,i),j=1,nmolty),ghost_particles(i)
        ! use_linkcell is always .false., and rintramax is 0.0
-       write(io_unit,'("! inix iniy iniz inirot inimix zshift dshift use_linkcell rintramax",/,5(I0,1X),F4.1,1X,F6.3,L1,1X,F3.1)')&
+       write(io_unit,'("! inix iniy iniz inirot inimix zshift dshift use_linkcell rintramax",/,5(I0,1X),F4.1,1X,F6.3,L1,1X,F4.1)')&
         inix(i),iniy(i),iniz(i),inirot(i),inimix(i),zshift(i),dshift(i),.false.,0.0_dp
     end do
     write(io_unit,'("END SIMULATION_BOX",/)')

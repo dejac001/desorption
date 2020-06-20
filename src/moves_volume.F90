@@ -1047,7 +1047,7 @@ contains
 
     if (lprint) then
        write(io_output,'(/,A,/,A)') 'NAMELIST MC_VOLUME','------------------------------------------'
-       write(io_output,'(A,F4.2)') 'target volume acceptance ratio (tavol): ',tavol
+       write(io_output,'(A,F6.3)') 'target volume acceptance ratio (tavol): ',tavol
        write(io_output,'(A,I0)') 'frequency to adjust maximum volume displacement: ',iratv
        write(io_output,'(A,F8.3)') 'initial maximum volume displacement (rmvol): ',rmvolume
        write(io_output,'(A,G16.9)') 'pmvol: ',pmvol

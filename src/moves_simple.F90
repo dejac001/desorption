@@ -876,13 +876,13 @@ contains
        write(io_output,'(/,A,/,A)') 'NAMELIST MC_SIMPLE','------------------------------------------'
        write(io_output,'(A,G16.9)') 'pm_atom_tra: ',pm_atom_tra
        write(io_output,'(A,G16.9)') 'initial maximum displacement for atom translation: ',armtra
-       write(io_output,'(A,F4.2)') 'target translation acceptance ratio: ',tatra
+       write(io_output,'(A,F6.3)') 'target translation acceptance ratio: ',tatra
        write(io_output,'(A,G16.9)') 'initial maximum displacement for molecule translation: ',rmtra
        write(io_output,'(A,G16.9)') 'pmtra: ',pmtra
        do i=1,nmolty
           write(io_output,'(A,I0,A,F8.4)') '   translation probability for molecule type ',i,' (pmtrmt): ',pmtrmt(i)
        end do
-       write(io_output,'(A,F4.2)') 'target rotation acceptance ratio: ',tarot
+       write(io_output,'(A,F6.3)') 'target rotation acceptance ratio: ',tarot
        write(io_output,'(A,G16.9)') 'initial maximum displacement for molecule rotation: ',rmrot
        write(io_output,'(A,G16.9)') 'pmrot: ',1.0E0_dp
        do i=1,nmolty
