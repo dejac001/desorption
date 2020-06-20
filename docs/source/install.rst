@@ -105,8 +105,22 @@ Mesabi
     cd /path/to/MCCCS-X
     mkdir build && cd build/
     cmake ..
+    make -j 2
 
 
 .. note::
     This uses the *GNU* 4.8.5 fortran compiler.
     You can try using other compilers too.
+
+Siepmann Group
+--------------
+Metropolis
+**********
+
+.. codeblock:: bash
+
+    module purge
+    module load cmake intel impi
+    mkdir build && cd build
+    FC=ifort cmake ..
+    make -j 2
