@@ -2,7 +2,7 @@ FROM dejac001/mcccs-x-base
 MAINTAINER <dejac001@umn.edu>
 
 RUN cd /home \
-    && git clone https://github.com/MCCCS-X/MCCCS-X.git \
-    && mkdir -p MCCCS-X/build && cd MCCCS-X/build/ \
+    && git clone https://github.com/dejac001/desorption.git MCCCS-MN \
+    && mkdir -p MCCCS-MN/build && cd MCCCS-MN/build/ \
     && cmake .. && make -j 2 \
-    && ln -sf /home/MCCCS-X/build/src/topmon /usr/bin/topmon
+    && ln -sf /home/MCCCS-MN/build/src/topmon /usr/bin/topmon
