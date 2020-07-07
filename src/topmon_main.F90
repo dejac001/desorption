@@ -521,7 +521,7 @@ contains
           ! write out the restart configurations to save-config file
           if (myid.eq.rootid) then
              call dump('save-config.'//integer_to_string(ichkpt))
-             call write_checkpoint_main('save-stats.'//integer_to_string(ichkpt))
+             ! call write_checkpoint_main('save-stats.'//integer_to_string(ichkpt))
           end if
        end if
        if (time_limit.gt.0) then
@@ -914,7 +914,8 @@ contains
 
        write(io_output,*)
        ! Output 2nd virial coefficient data
-2000   if (lvirial) then
+!2000
+       if (lvirial) then
            nImages = real(nstep/imv,dp)
            write(io_output,*) 'At temperature of ', virtemp
            bvirial = binvir/nImages
