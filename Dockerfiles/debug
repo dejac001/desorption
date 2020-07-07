@@ -1,8 +1,8 @@
 FROM dejac001/mcccs-x-base
 MAINTAINER <dejac001@umn.edu>
 
-RUN cd /lib \
+RUN apt-get -y install gdb vim && cd /lib \
     && git clone https://github.com/dejac001/desorption.git MCCCS-MN \
     && mkdir -p MCCCS-MN/build && cd MCCCS-MN/build/ \
-    && cmake .. && make -j 2 \
+    && cmake -D CMAKE_BUILD_TYPE=DEBUG .. && make -j 2 \
     && ln -sf /lib/MCCCS-MN/build/src/topmon /usr/bin/topmon
