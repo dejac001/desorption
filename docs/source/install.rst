@@ -86,7 +86,7 @@ type in the commands **after** :code:`RUN`.
 Second, the code needs to be cloned from the
 repository. The associated dockerfile looks like
 
-.. literalinclude:: ../../Dockerfiles/users
+.. literalinclude:: ../../Dockerfiles/release
     :language: bash
     :linenos:
 
@@ -99,7 +99,7 @@ Minnesota Supercomputing Institute
 Mesabi
 ******
 
-.. codeblock:: bash
+.. code-block:: bash
 
     module load cmake
     git clone https://github.com/dejac001/desorption.git MCCCS-MN
@@ -118,7 +118,7 @@ Siepmann Group
 Metropolis
 **********
 
-.. codeblock:: bash
+.. code-block:: bash
 
     module purge
     git clone https://github.com/dejac001/desorption.git MCCCS-MN && cd MCCCS-MN

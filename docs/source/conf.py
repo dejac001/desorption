@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'MCCCS-X'
-copyright = '2020, Many'
+project = 'desorption'
+copyright = 'Many'
 author = 'Many'
 
 # The full version, including alpha/beta/rc tags
